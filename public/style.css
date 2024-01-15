@@ -1,9 +1,31 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
   list-style: none;
+  background-color: #0e0e10;
 }
 
-#chat {
-  margin: 0px 20% 0px 20%;
+#container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+#container .twitchChannelNav {
+  height: 100vh;
+  width: 25vw;
+}
+#container #containerChat {
+  height: 100vh;
+  width: 75vw;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+#container #containerChat #chat {
+  padding: 2.5%;
+}
+
+.twitchChannelNav .en-tête {
+  width: 100%;
+  height: 10%;
 }

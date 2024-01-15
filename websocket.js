@@ -9,7 +9,7 @@ wss.on('connection', (ws) => {
   ws.send(JSON.stringify(initialData));
 
   // Écouter les mises à jour et les envoyer au client lorsqu'elles surviennent
-  fs.watch('./data/aenot.json', (event, filename) => {
+  fs.watch('./data/tobias.json', (event, filename) => {
     if (event === 'change') {
       const updatedData = loadMessagesFromFile();
       ws.send(JSON.stringify(updatedData));
@@ -19,10 +19,10 @@ wss.on('connection', (ws) => {
 
 function loadMessagesFromFile() {
   try {
-    const data = fs.readFileSync('./data/aenot.json', 'utf8');
+    const data = fs.readFileSync('./data/tobias.json', 'utf8');
     return JSON.parse(data);
   } catch (err) {
-    // console.error('Erreur lors de la lecture du fichier aenot.json :', err);
+    // console.error('Erreur lors de la lecture du fichier tobias.json :', err);
     return [];
   }
 }

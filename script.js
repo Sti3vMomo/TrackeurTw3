@@ -3,12 +3,10 @@ const socket = new WebSocket('ws://localhost:8080');
 socket.addEventListener('message', (event) => {
   const data = JSON.parse(event.data);
   updateDisplay(data);
-  scrollDown();
 });
 
 function updateDisplay(data) {
-  const displayElement = document.getElementByClassName('display');
-  displayElement.innerHTML = '';  // Efface le contenu précédent
+  const displayElement = document.getElementById('chat');
 
   const ul = document.createElement('ul');
 
@@ -31,9 +29,17 @@ function updateDisplay(data) {
       li.appendChild(imgVIP);
     }
 
-    // Ajoute l'heure et le texte du message après les images
     const textContent = document.createTextNode(`${message.username}: ${message.message}`);
     li.appendChild(textContent);
+
+    if (message.color) {
+      const coloredUsername = document.createElement('span');
+      coloredUsername.style.color = message.color;
+      coloredUsername.appendChild(textContent);
+      li.appendChild(coloredUsername);
+    } else {
+      li.appendChild(textContent);
+    }
 
     // Ajoute l'élément li à la liste ul
     ul.appendChild(li);
@@ -43,37 +49,13 @@ function updateDisplay(data) {
   displayElement.appendChild(ul);
 }
 
-function scrollDown() {
-  // Obtient la hauteur totale du contenu déroulant
-  const scrollHeight = document.body.scrollHeight;
-
-  // Défilement vers le bas
-  window.scrollTo(0, scrollHeight);
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-  scrollDown();
+document.addEventListener('DOMContentLoaded', () => {
+  // Envoyez une demande au serveur pour tous les messages
+  socket.send(JSON.stringify({ command: 'getAllMessages' }));
 });
 
-// Charge les données initiales
-loadJSON('tobias');
-// Fait défiler vers le bas après le chargement
-
-function scrollDownIfYouAreDown() {
-  // Obtient la position actuelle de défilement vertical
-  const currentScroll = window.scrollY;
-
-  // Obtient la hauteur totale du contenu déroulant
-  const scrollHeight = document.body.scrollHeight;
-
-  // Obtient la hauteur de la fenêtre visible
-  const windowHeight = window.innerHeight;
-
-  // Vérifie si l'utilisateur est déjà tout en bas
-  const isAlreadyAtBottom = currentScroll + windowHeight >= scrollHeight;
-
-  // Si l'utilisateur est déjà tout en bas, effectue le défilement vers le bas
-  if (isAlreadyAtBottom) {
-    window.scrollTo(0, scrollHeight);
-  }
+// Fait défiler vers le bas de la zone de chat
+function scrollDown() {
+  const chatElement = document.getElementById('chat');
+  chatElement.scrollTop = chatElement.scrollHeight;
 }
