@@ -54,8 +54,3 @@ document.addEventListener('DOMContentLoaded', () => {
   socket.send(JSON.stringify({ command: 'getAllMessages' }));
 });
 
-// Fait défiler vers le bas de la zone de chat
-function scrollDown() {
-  const chatElement = document.getElementById('chat');
-  chatElement.scrollTop = chatElement.scrollHeight;
-}

@@ -2,8 +2,10 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+ul {
   list-style: none;
-  background-color: #0e0e10;
 }
 
 #container {
@@ -13,13 +15,20 @@
 }
 #container .twitchChannelNav {
   height: 100vh;
-  width: 25vw;
+  width: 25.75vw;
+  background-color: #18181B;
+}
+#container .espacement {
+  height: 100vh;
+  width: 0.15vw;
+  background-color: #35353B;
 }
 #container #containerChat {
   height: 100vh;
   width: 75vw;
   overflow-y: auto;
   max-height: 100vh;
+  background-color: #3D3D40;
 }
 #container #containerChat #chat {
   padding: 2.5%;
@@ -27,5 +36,13 @@
 
 .twitchChannelNav .en-tête {
   width: 100%;
-  height: 10%;
+  height: 7.5%;
+}
+.twitchChannelNav .en-tête .titre {
+  color: white;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
