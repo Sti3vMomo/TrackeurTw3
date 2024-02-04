@@ -1,0 +1,20 @@
+[
+  {
+    "date": "16/01/2024",
+    "time": "15:49:45",
+    "username": "lk_koro",
+    "message": "!planning",
+    "isMod": false,
+    "isVIP": false,
+    "color": "#008000"
+  },
+  {
+    "date": "16/01/2024",
+    "time": "15:49:46",
+    "username": "nightbot",
+    "message": "📅 Planning de la semaine du 08 au 14 Janvier : https://urlz.fr/pdkv",
+    "isMod": true,
+    "isVIP": false,
+    "color": "#7C7CE1"
+  }
+]
