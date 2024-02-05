@@ -93,3 +93,4 @@ function getContentType(extname) {
       return 'text/plain';
   }
 }
+

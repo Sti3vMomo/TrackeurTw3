@@ -11,16 +11,8 @@
   "dependencies": {
     "express": "^4.18.2",
     "fetch": "^1.1.0",
-<<<<<<< Updated upstream
     "nodemon": "^3.0.3",
     "path": "^0.12.7",
     "tmi.js": "^1.8.5"
-=======
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
-    "path": "^0.12.7",
-    "tmi.js": "^1.8.5",
-    "ws": "^8.16.0"
->>>>>>> Stashed changes
   }
 }
