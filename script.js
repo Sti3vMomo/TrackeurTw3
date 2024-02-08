@@ -7,7 +7,7 @@ socket.addEventListener('message', (event) => {
 });
 
 function updateDisplay(data) {
-  const displayElement = document.getElementByClassName('display');
+  const displayElement = document.getElementById('chat');
   displayElement.innerHTML = '';  // Efface le contenu précédent
 
   const ul = document.createElement('ul');

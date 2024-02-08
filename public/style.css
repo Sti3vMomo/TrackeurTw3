@@ -4,6 +4,21 @@
   list-style: none;
 }
 
-#chat {
-  margin: 0px 20% 0px 20%;
+#container {
+  width: 100vw;
+  height: 100vh;
+
+  .twitchChannel {
+    width: 25vw;
+    height: 100vh;
+  }
+
+  .live {
+
+  }
+
+  #chat {
+
+  }
 }
+
