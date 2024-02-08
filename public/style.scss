@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+
+  .twitchChannelNav {
+    height: 100vh;
+    width: 25.75vw;  
+    background-color: #18181B;
+  }
+
+  .espacement {
+    height: 100vh;
+    width: 0.15vw;
+    background-color: #35353B;
+  }
+  #containerChat {
+    height: 100vh;
+    width: 75vw;
+    overflow-y: auto;
+    max-height: 100vh;
+    background-color: #3D3D40;
+    
+    #chat {
+     padding: 2.5%;
+    }
+  }
+ 
+}
+
+
+.twitchChannelNav {
+
+  .en-tête {
+    width: 100%;
+    height: 7.5%;
+
+
+    .titre {
+      color: white;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
